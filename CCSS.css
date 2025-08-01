@@ -1,0 +1,212 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Light gray background */
+    color: #333; /* Dark gray text */
+}
+
+/* Header Section */
+header {
+    display: flex; /* Arranges items in a row */
+    justify-content: space-between; /* Pushes items to the ends of the container */
+    align-items: center; /* Vertically centers the items */
+    padding: 20px;
+    background-color: #fff; /* White background for the header */
+    border-bottom: 1px solid #eee;
+}
+
+.header-left h1 {
+    font-size: 2.5em; /* Adjust as needed */
+    margin: 0;
+    color: #5d3d78; /* A shade of purple for the title */
+}
+
+.header-right input[type="search"] {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1em;
+    width: 250px;
+    text-align: right;
+}
+
+/* Banner Section */
+.banner img {
+    width: 100%; /* Makes the image take up the full width */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes any extra space below the image */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    max-height: 400px; /* Limits the height of the banner for better presentation */
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f0f0f0;
+}
+
+.welcome-section h2 {
+    font-size: 2em;
+    color: #5d3d78;
+    margin-bottom: 15px;
+}
+
+.welcome-section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: flex; /* Arranges gallery items side by side */
+    flex-wrap: wrap; /* Allows items to wrap to a new line on smaller screens */
+    justify-content: center; /* Centers gallery items horizontally */
+    gap: 20px; /* Adds space between gallery items */
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.gallery-item {
+    position: relative; /* Allows positioning of the caption within the item */
+    width: 280px; /* Initial width, will be overridden by flex properties for responsiveness */
+    height: 200px;
+    background-size: cover; /* Ensures background image covers the area */
+    background-position: center; /* Centers the background image */
+    border-radius: 8px;
+    overflow: hidden; /* Clips content that overflows the border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Helps align the caption box */
+    align-items: flex-end; /* Aligns the caption to the bottom by default */
+    opacity: 0.9; /* Slightly dim the background images */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.gallery-item:hover {
+    opacity: 1; /* Make the image fully opaque on hover */
+}
+
+/* Specific background images for gallery items */
+.image-gallery .gallery-item:nth-child(1) {
+    background-image: url('https://placehold.co/600x400/808080/FFFFFF?text=Hair+Styling');
+}
+.image-gallery .gallery-item:nth-child(2) {
+    background-image: url('https://placehold.co/600x400/A0A0A0/FFFFFF?text=Nail+Gloss');
+}
+.image-gallery .gallery-item:nth-child(3) {
+    background-image: url('https://placehold.co/600x400/C0C0C0/FFFFFF?text=Skincare');
+}
+.image-gallery .gallery-item:nth-child(4) {
+    background-image: url('https://placehold.co/600x400/D0D0D0/FFFFFF?text=Massage');
+}
+.image-gallery .gallery-item:nth-child(5) {
+    background-image: url('https://placehold.co/600x400/E0E0E0/FFFFFF?text=Pedicure');
+}
+
+.gallery-item .caption {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for caption */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0; /* Caption positioned at the bottom */
+}
+
+/* Content Sections */
+.content-section {
+    display: flex; /* Arranges image and text side by side */
+    align-items: center; /* Vertically centers the content within the section */
+    padding: 50px 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-section:nth-child(odd) { /* Styles for odd content sections (image left, text right) */
+    flex-direction: row; /* Default for flex, but explicit */
+}
+
+.content-section:nth-child(even) { /* Styles for even content sections (image right, text left) */
+    flex-direction: row-reverse; /* Reverses the order of items */
+}
+
+.content-image {
+    flex: 1; /* Allows the image to grow and shrink */
+    padding: 20px;
+}
+
+.content-image img {
+    max-width: 100%; /* Makes images responsive within their containers */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.content-text {
+    flex: 1; /* Allows the text to grow and shrink */
+    padding: 20px;
+}
+
+.content-text h3 {
+    font-size: 1.8em;
+    color: #5d3d78;
+    margin-bottom: 10px;
+}
+
+.content-text p {
+    font-size: 1em;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #5d3d78; /* A shade of purple for the footer */
+    color: #fff;
+    font-size: 0.9em;
+}
+
+/* Responsive Design with Media Queries */
+@media (max-width: 768px) { /* Styles for screens smaller than 768px (tablets) */
+    header {
+        flex-direction: column; /* Stacks header elements vertically */
+        text-align: center;
+    }
+
+    .header-right {
+        margin-top: 15px; /* Adds space between title and search box */
+    }
+
+    .header-right input[type="search"] {
+        width: 80%;
+        text-align: center;
+    }
+
+    .image-gallery {
+        flex-direction: column; /* Stacks gallery items vertically */
+        align-items: center;
+    }
+
+    .gallery-item {
+        width: 90%; /* Adjusts gallery items to take up more width on smaller screens */
+    }
+
+    .content-section {
+        flex-direction: column; /* Stacks image and text vertically */
+    }
+
+    .content-section:nth-child(even) { /* Ensures consistent stacking order */
+        flex-direction: column;
+    }
+
+    .content-image, .content-text {
+        width: 100%; /* Makes image and text take full width */
+        padding: 10px;
+    }
+}
